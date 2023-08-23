@@ -14,4 +14,11 @@ npm init -y
 npm i nodemon eslint eslint-config-prettier eslint-plugin-prettier prettier -D
 ```
 
+## Express installation
+- Install Express
+```sh
+npm i express
+```
+- In index.js ==> first logic for server 
+
 
