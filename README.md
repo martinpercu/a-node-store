@@ -22,3 +22,8 @@ npm i express
 - In index.js ==> first logic for server 
 
 
+## Routing start
+- In index.js adding new routes. (endpoints)
+- In endpoint products use .json.
+
+
