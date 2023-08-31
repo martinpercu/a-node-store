@@ -28,4 +28,12 @@ npm i express
 ## Get start
 - In index.js adding new getters
 
+## Get query Params
+- In index.js adding new getters with wuery params
+- Imporant install facer to greate fake data.
+```sh
+npm i @faker-js/faker
+```
+- IMPORTANT ===> ALL Specifics endpoint must be place above the dynamics ones. ===> Example with the get/products/filter. I left commented the unused wrong one.
+
 
