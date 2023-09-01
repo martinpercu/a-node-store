@@ -36,4 +36,12 @@ npm i @faker-js/faker
 ```
 - IMPORTANT ===> ALL Specifics endpoint must be place above the dynamics ones. ===> Example with the get/products/filter. I left commented the unused wrong one.
 
-
+## Refact with Router 
+- Create a new folder "routes".
+- Create in folder "routes" index.js ===> here we add dif. routes. 
+- Create in Folder "routes" products.routers.js 
+- In products.router.js bring all the path from root index relative to products.
+- add a router from express ==> replace the app by the new router, cut the path "products/" and then export router with "add module.exports = router;" at the end of file.
+- In routes/index create function routerApi to use the products path. Then export this function ==> "module.exports = routerApi".
+- In the root index import the routerApi ===>"const routerApi = require('./routes')"
+- In the root index at the end ===> "routerApi(app);"
