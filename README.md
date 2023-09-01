@@ -45,3 +45,9 @@ npm i @faker-js/faker
 - In routes/index create function routerApi to use the products path. Then export this function ==> "module.exports = routerApi".
 - In the root index import the routerApi ===>"const routerApi = require('./routes')"
 - In the root index at the end ===> "routerApi(app);"
+- In folder routes add 2 other js.  categories and products. Make the same as before and add the routing in the index.js to connect everything.
+- IMPORTANT add a versioning system to all endpoints. like this ==> /api/v1 
+- In index.js import ==> "const express = require('express');". then in funtion routerApi create a const router from express.Router() the app.use('/api/v1') as router. Then change app.use for router.use in endpoints needed. (in this case all the 3 undpoints. products, categories and users).
+
+
+ 
