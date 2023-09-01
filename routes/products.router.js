@@ -28,7 +28,7 @@ router.get('/:id', (req, res) => {
     id,
     name: 'Product 1',
     price: 150
-    })
+    });
 })
 
 router.post('/', (req, res) => {
@@ -36,8 +36,37 @@ router.post('/', (req, res) => {
   res.json({
     message: 'created the product',
     data: body
-  })
+  });
 })
+
+router.put('/:id', (req, res) => {
+  const { id } = req.params;
+  const body = req.body;
+  res.json({
+    message: 'update the product',
+    data: body,
+    id,
+  });
+})
+
+router.patch('/:id', (req, res) => {
+  const { id } = req.params;
+  const body = req.body;
+  res.json({
+    message: 'update the product',
+    data: body,
+    id,
+  });
+})
+
+router.delete('/:id', (req, res) => {
+  const { id } = req.params;
+  res.json({
+    message: 'delete the product',
+    id,
+  });
+})
+
 
 // app.get('/products/filter', (req, res) => {
 //   res.send('Je suis un filter');

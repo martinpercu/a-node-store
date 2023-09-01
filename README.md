@@ -54,6 +54,10 @@ npm i @faker-js/faker
 - get the body from the req.body. And the response should be a message + the data. In this case is the full body".
 - IMPORTANT as we use a JSON we must add the native middleware !!!
 - To add this middleware ===> in the root index ==> "app.use(express.json());"
-- 
+
+## Put Patch Delete 
+- In products.router create a put, patch and a delete functions.
+- IMPORTANT!! Put and Patch are just conventions. Put is to replace the entire object and patch just to replace a part of the object. (in this case replace only the "price").
+In the future I will add the insomnia file in the proyect in order to see this.
 
  
