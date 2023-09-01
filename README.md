@@ -49,5 +49,11 @@ npm i @faker-js/faker
 - IMPORTANT add a versioning system to all endpoints. like this ==> /api/v1 
 - In index.js import ==> "const express = require('express');". then in funtion routerApi create a const router from express.Router() the app.use('/api/v1') as router. Then change app.use for router.use in endpoints needed. (in this case all the 3 undpoints. products, categories and users).
 
+## Post 
+- In products.router add the post method.
+- get the body from the req.body. And the response should be a message + the data. In this case is the full body".
+- IMPORTANT as we use a JSON we must add the native middleware !!!
+- To add this middleware ===> in the root index ==> "app.use(express.json());"
+- 
 
  

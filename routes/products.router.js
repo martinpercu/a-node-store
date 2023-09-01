@@ -31,6 +31,14 @@ router.get('/:id', (req, res) => {
     })
 })
 
+router.post('/', (req, res) => {
+  const body = req.body;
+  res.json({
+    message: 'created the product',
+    data: body
+  })
+})
+
 // app.get('/products/filter', (req, res) => {
 //   res.send('Je suis un filter');
 // })
