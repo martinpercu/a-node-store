@@ -60,4 +60,9 @@ npm i @faker-js/faker
 - IMPORTANT!! Put and Patch are just conventions. Put is to replace the entire object and patch just to replace a part of the object. (in this case replace only the "price").
 In the future I will add the insomnia file in the proyect in order to see this.
 
+## Status Codes 
+- In products.router post just add the .status(201). ===> "res.status(201).json({....."
+- In products.router in get add conditinal to for the 404. (params received are always a string).
+- IMPORTANT! ==> all params receive by "get" are string. So if you are looking for an ID and is a number===> always know is number:string.
+
  
