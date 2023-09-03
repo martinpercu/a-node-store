@@ -74,4 +74,9 @@ In the future I will add the insomnia file in the proyect in order to see this.
 - Then bring the logic in products.router to ProductsServices in order to create an array of products.
 - Then connect the logic from get post patch put delete from router to services in "create","find","findOne","update" and "delete".
 
+## Async 
+- In product.service add in all methods the async. 
+- In product.router add in all methods the async and await just before calling the service. 
+- We will emulate a delayed response. ===> in product service in find() will return a promise with a setTimeout 4000
+- As example in the product patch we add a try catch.
  
