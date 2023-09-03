@@ -25,6 +25,7 @@ npm i express
 - In index.js adding new routes. (endpoints)
 - In endpoint products use .json.
 
+# CRUD
 ## Get start
 - In index.js adding new getters
 
@@ -64,5 +65,13 @@ In the future I will add the insomnia file in the proyect in order to see this.
 - In products.router post just add the .status(201). ===> "res.status(201).json({....."
 - In products.router in get add conditinal to for the 404. (params received are always a string).
 - IMPORTANT! ==> all params receive by "get" are string. So if you are looking for an ID and is a number===> always know is number:string.
+
+# Services
+## Refact to services 
+- Create new folder "services" then a first file products.services.js.
+- In products.services create a class ProductsServices and the module for export this class.
+- In this new Class add the method needed. "create","find","findOne","update" and "delete".
+- Then bring the logic in products.router to ProductsServices in order to create an array of products.
+- Then connect the logic from get post patch put delete from router to services in "create","find","findOne","update" and "delete".
 
  
