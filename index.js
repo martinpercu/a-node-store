@@ -2,6 +2,8 @@ const express = require('express');
 // const { faker } = require('@faker-js/faker')
 const routerApi = require('./routes')
 
+const { logErrors, errorHandler } = require('./middlewares/error.handler')
+
 const app = express();
 const port = 3000;
 
@@ -16,6 +18,9 @@ app.get('/new-endpoint', (req, res) => {
 })
 
 routerApi(app);
+
+app.use(logErrors);
+app.use(errorHandler)
 
 // app.get('/users', (req, res) => {
 //   const { limit, offset } = req.query;
