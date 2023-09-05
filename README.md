@@ -101,6 +101,17 @@ npm i @hapi/boom
 - To use differents situation we will add boolean value to the products 'isBlock'. Then if this product is blocked we will show something if is not blocked another and if is not found the product another.
 - In the findOne(). We implement the logic to implement differents error. So if the product isBlock ===< throw boom.conflict('Product is BLOCKED');
 
+## Middleware validation with Joi
+- Install Joi
+```sh
+npm i joi
+```
+- Create new Folder "schemas". There new file product.schema.js (usually we could find this as DTO data-transfer-object). ==> is the same.
+- In product.schema create the schemas for the product.
+- Now create a middleware that will use the schemas to validate it. 
+- In middleware create new file "validator.handler.js". Here just a function good place to use the closure property from javascript!!!. 
+
+
 
 
 
