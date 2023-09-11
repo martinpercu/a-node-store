@@ -111,6 +111,16 @@ npm i joi
 - Now create a middleware that will use the schemas to validate it. 
 - In middleware create new file "validator.handler.js". Here just a function good place to use the closure property from javascript!!!. 
 
+## Testing the endpoints
+- In products.router import the validatorHandler from middleware/validatorHandler
+- In products.router import all from schemas/product.schema
+- In the router.get('/:id'.... BEFORE the try-catch Add the validatorHandler with the getProductSchema adding the property 'params' to get the property from params.
+- In the router.post('/',.... BEFORE start this process add validatorHandler with the createProductSchema adding the property 'body' to get the property from params.
+- In the router.put('/:id', and router.patch('/:id', ... we need to mix a little bit both. IMPORTANT the middlewares are secuencial so  first validate the ID with getProductSchema then validate the products itself with updateProductSchema.
+- IMPORTANT Joi will check field by field and when find an error stop the process. So if you are updating a product with more than 1 field a name + price. If we have in both fields error will return just the first one. That's is not great for UX so.... in the validatorHandler we will add { abortEarly: false } in the schema.validate().
+
+
+
 
 
 
