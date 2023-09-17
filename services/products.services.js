@@ -24,53 +24,47 @@ class ProductsServices {
 
   async create(data) {
     const newProduct = {
-      id: faker.string.uuid(),
+      id: faker.datatype.uuid(),
       ...data
     }
     this.products.push(newProduct);
-    return newProduct
+    return newProduct;
   }
 
   find() {
-    return new Promise((resolve, reject) => {
-      setTimeout(() => {
-        resolve(this.products);
-      }, 4000)
-    })
+    return this.products;
   }
 
   async findOne(id) {
     const product = this.products.find(item => item.id === id);
     if (!product) {
-      throw boom.notFound('Product not found');
+      throw boom.notFound('product not found');
     }
     if (product.isBlock) {
-      throw boom.conflict('Product is BLOCKED');
+      throw boom.conflict('product is block');
     }
-    return product
+    return product;
   }
 
   async update(id, changes) {
     const index = this.products.findIndex(item => item.id === id);
     if (index === -1) {
-      // throw new Error('Product not found');
-      throw boom.notFound('Product not found');
+      throw boom.notFound('product not found');
     }
-    const product = this.products[index]
+    const product = this.products[index];
     this.products[index] = {
       ...product,
       ...changes
     };
-    return this.products[index]
+    return this.products[index];
   }
 
   async delete(id) {
     const index = this.products.findIndex(item => item.id === id);
     if (index === -1) {
-      // throw new Error('Product not found');
-      throw boom.notFound('Product not found');
+      throw boom.notFound('product not found');
     }
-    this.products.splice(index, 1)
+    this.products.splice(index, 1);
     return { id };
   }
 
