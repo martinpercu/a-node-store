@@ -1,17 +1,16 @@
 # Created by https://www.toptal.com/developers/gitignore/api/node,windows,macos,linux
 # Edit at https://www.toptal.com/developers/gitignore?templates=node,windows,macos,linux
 
-# Extra Martin
-# postgres DB
-postgres_data
-postgres_data2
-
-
 ### Linux ###
 *~
 
 ### Personal Martin
 insomnia.json
+# postgres DB
+postgres_data
+postgres_data2
+
+
 
 # temporary files which can be created if a process still has a handle open of a deleted file
 .fuse_hidden*
