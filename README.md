@@ -204,6 +204,12 @@ docker inspect "id-from-the-container"
 ```
 - we will get in: "Networks"/"IPAddress" the IP adress. With this info configure the pgAdmin
 - IMPORTANT is recommended to use the NAME and not IP adress in the pgConfig. Because this ipAdress will change if container restart in the future.
+- To close all we have ...===>
+```sh
+docker-compose down pgadmin
+docker-compose down postgres
+```
+
 
 
 
