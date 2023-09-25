@@ -211,6 +211,21 @@ docker-compose down postgres
 ```
 
 
+## Integration Postgres with Node 
+- Install pg (a node driver )
+```sh
+npm install pg
+```
+- Create new folder "libs" this will take care to connect to other API databases etc etc.
+- In this new folder new file postgres.js
+- In postgres.js create the client to connect to postgres . Put all in an async function and return the "client" we will use to connect.
+- As example use this client in the user.service.... first import getConnection. Then use in the find() method.
+
+
+
+
+
+
 
 
 
