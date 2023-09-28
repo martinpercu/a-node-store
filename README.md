@@ -210,7 +210,6 @@ docker-compose down pgadmin
 docker-compose down postgres
 ```
 
-
 ## Integration Postgres with Node 
 - Install pg (a node driver )
 ```sh
@@ -221,6 +220,14 @@ npm install pg
 - In postgres.js create the client to connect to postgres . Put all in an async function and return the "client" we will use to connect.
 - As example use this client in the user.service.... first import getConnection. Then use in the find() method.
 
+## Pool Manage Connection 
+- Use a Pool to share just one coneccton and share it.
+- In libs folder create new file postgres.pool.js.
+- In postgress.pool.js just import pool from pg and create a pool new Pool with same data as Client in postgres.
+- Now use this pool, as example, in the product service.
+- In products.service import this "pool".
+- In products.service add this "pool" in the constructor and add a listener with a console.error.
+- In products.service in the find() method use this "pool" in the query. As an asyncronious request add the const to the query and the async in find()
 
 
 
