@@ -257,6 +257,25 @@ npm install --save pg pg-hstore
 - IMPORTANT in async find() we can make a "normal request" ==> 'SELECT * FROM tasks'. Then with sequelize we will make the request with an ORM format.
 - IMPORTANT sequelize return an array of "data" and "metadata". We will in almos all cases just the "data".
 
+## ORM Model Creation
+- We will use schemas to interact with database.
+- Create new folder "db".
+- Inside "db" create ne folder "models".
+- In "db/models" new file user.models.js. here ==> const { Model, DataTypes, Sequelize } from sequelize.
+- In user.models.js. we create the structure of table user "UserSchema". "sequelize" will create this table for us!!!. (important in creatAt the name of field is better to use 'create_at' this is normal to see in databases. Not recommende use camelcases as we use in Javascript).
+- In user.models.js.  add ===> "class User extends Model" with static associate() and static config(sequelize)
+- Export all this ===> "USER_TABLE, UserSchema, User"
+- Then we create in "db/models" a new file "index.js" this will be the file to create and connect all the models (tables in DB) we will create in the future. Here we create a function setupModels();
+- Then in libs/sequelize.js  import setupModels. We will run setupModels() just after the create the sequelize instance!!!.
+- Then in libs/sequelize.js  "sequelize.sync()" with this will create the table with the structure in the UserSchema.  
+- When sequelize with function setupModels() in the .init will generate a name-space called "models" with all model form in order to access to them. ===>
+- In user.service.ts import { models } from libs/sequelize.
+- IMPORTANT!! to know the name of this model check the "modelName" in the user.model
+- In user.service.js we have an async find() with a query request 'SELECT * FROM tasks'. Now we will use sequelize to avoid use the query request. (I left commented this async find() to show changes.).
+
+
+
+
 
 
 
