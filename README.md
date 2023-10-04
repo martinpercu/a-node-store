@@ -241,6 +241,24 @@ npm install dotenv
 ```
 - In config.js "require('dotenv').config();"  ===> With this line is all we need to read the .env 
 
+## ORM with Sequelize
+- Sequelize will manage the connection to the DB. (sequelize.org)
+- Install sequelize
+```sh
+npm install --save sequelize
+```
+- Then for postgres
+```sh
+npm install --save pg pg-hstore
+```
+- Now in folder libs add new file sequelize.js and import sequelize.
+- The sequelize.js is similar to postgres.pool.js in same folder
+- As example in products.service import sequelize instance and replace the postgres.pool (I left commented to see the differences). 
+- IMPORTANT in async find() we can make a "normal request" ==> 'SELECT * FROM tasks'. Then with sequelize we will make the request with an ORM format.
+- IMPORTANT sequelize return an array of "data" and "metadata". We will in almos all cases just the "data".
+
+
+
 
 
 
