@@ -282,6 +282,10 @@ npm install --save pg pg-hstore
 - In add logic in: async findOne(id) + async update(id, changes) + async delete(id)
 - IMPORTANT add an in in the findOne and use this method in the update() and the delete().
 
+## ORM Middleware
+- In the error.handler create a function ormErrorHandler(). Add it to the module.exports.
+- IMPORTANT!! ValidationError is a class comming from Sequelize. 
+- In the indext import ormErrorHandler and add it "app.use(ormErrorHandler);" between the logsErrors and the boomErrors.
 
 
 
