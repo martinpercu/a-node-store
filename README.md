@@ -273,6 +273,14 @@ npm install --save pg pg-hstore
 - IMPORTANT!! to know the name of this model check the "modelName" in the user.model
 - In user.service.js we have an async find() with a query request 'SELECT * FROM tasks'. Now we will use sequelize to avoid use the query request. (I left commented this async find() to show changes.).
 
+## CRUD - ORM
+- We will create the CRUD for the user. 
+- In user.models we need an email + password.
+- In users.router the validator use the createUserSchema.
+- In user.schema the createUserSchema has email+password+role. (role will be commented just for now)
+- So in user.service in "async create(data)" add the logic to create the newUser.
+- In add logic in: async findOne(id) + async update(id, changes) + async delete(id)
+- IMPORTANT add an in in the findOne and use this method in the update() and the delete().
 
 
 
