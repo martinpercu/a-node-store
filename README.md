@@ -287,8 +287,13 @@ npm install --save pg pg-hstore
 - IMPORTANT!! ValidationError is a class comming from Sequelize. 
 - In the indext import ormErrorHandler and add it "app.use(ormErrorHandler);" between the logsErrors and the boomErrors.
 
-
-
+## docker use anoyther DB (mysql)
+- In docker-compose add the new db:
+- Add in .gitignore the folder mysql_data
+- In docker-compose add mysql and the phpmyadmin
+- In .env use the same port as the docker-compose (3306)
+- In .env DB_USER must to be "root" (because in docker-compose ===> MYSQL_ROOT_PASSWORD)
+- In sequelize.js replace "postres" with "mysql"
 
 
 
