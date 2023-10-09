@@ -295,7 +295,18 @@ npm install --save pg pg-hstore
 - In .env DB_USER must to be "root" (because in docker-compose ===> MYSQL_ROOT_PASSWORD)
 - In sequelize.js replace "postres" with "mysql"
 
-
+# Migrations
+## Migrations start
+- First instal the sequelize cli
+```sh
+npm install sequelize-cli --save-dev
+```
+- Create new file ".sequelizerc" (add it in the gitignore).
+- In .sequelizerc create a module.exports with the confioguration of config + models-path + migrations-path + seeders-path.
+- In folder "db" create this folders: "seeders"+"migrations"
+- In folder "db" create "config.js"
+- In db/config.js add the connection cofiguration. (bring from sequelize.js the consts). Then export this info for development and production.
+  
 
 
 
