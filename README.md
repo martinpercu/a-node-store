@@ -79,4 +79,14 @@ In the future I will add the insomnia file in the proyect in order to see this.
 - In product.router add in all methods the async and await just before calling the service. 
 - We will emulate a delayed response. ===> in product service in find() will return a promise with a setTimeout 4000
 - As example in the product patch we add a try catch.
+
+## Middleware
+- Create new Folder ==> "middlewares" then a file error.handler.js
+- In the error.handler Creat 2 functions to manage the errors.
+- Export the 2 functions
+- IN main index.js import this middlewares. 
+- IMPORTANT!!! The middlewares must be implemented AFTER the ROUTER definition "routerApi(app)".
+- To force an error: ==> in product service in findOne() invent a const with a unexisted method "findFalling()" (this will be the error.). In product router in router.get('/:id'... here implement a catch and try.
+
+ 
  
