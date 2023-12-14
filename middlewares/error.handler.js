@@ -12,6 +12,16 @@ function errorHandler (err, req, res, next) {
   })
 }
 
+// Cannot set headers after they are sent to the client
+function boomErrorHandler (err, req, res, next) {
+  if (err.isBoom) {
+    const { output } = err;
+    res.status(output.statusCode).json(output.payload);
+  } else {
+    next(err)
+  }
+}
 
 
-module.exports = { logErrors, errorHandler }
+
+module.exports = { logErrors, errorHandler, boomErrorHandler }

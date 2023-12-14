@@ -88,5 +88,21 @@ In the future I will add the insomnia file in the proyect in order to see this.
 - IMPORTANT!!! The middlewares must be implemented AFTER the ROUTER definition "routerApi(app)".
 - To force an error: ==> in product service in findOne() invent a const with a unexisted method "findFalling()" (this will be the error.). In product router in router.get('/:id'... here implement a catch and try.
 
+## Middleware with Boom
+- Install Boom
+```sh
+npm i @hapi/boom
+```
+- In product.service import boom ==> "const boom = require('@hapi/boom')"
+- Instead send an "new Error" we replace for a throw boom.notFound(); With this the notFound() in boom "knows" is a 404.
+- In findOne() wi will change logic to use boom if product not found.
+- In the error.handler create a boomErrorHandler function to manage the errors. IMPORTANT the "if" must be follow by an "else" to add the "next(err)".
+- In product.router, just as example I left the PUT without the errorBoomHandler and the PATCH with.
+- To use differents situation we will add boolean value to the products 'isBlock'. Then if this product is blocked we will show something if is not blocked another and if is not found the product another.
+- In the findOne(). We implement the logic to implement differents error. So if the product isBlock ===< throw boom.conflict('Product is BLOCKED');
+
+
+
+
  
  

@@ -33,13 +33,6 @@ router.post('/', async (req, res) => {
 })
 
 router.put('/:id', async (req, res) => {
-  const { id } = req.params;
-  const body = req.body;
-  const product = await service.update(id, body);
-  res.json(product);
-})
-
-router.patch('/:id', async (req, res) => {
   try {
     const { id } = req.params;
     const body = req.body;
@@ -50,7 +43,17 @@ router.patch('/:id', async (req, res) => {
       message: error.message
     })
   }
+})
 
+router.patch('/:id', async (req, res, next) => {
+  try {
+    const { id } = req.params;
+    const body = req.body;
+    const product = await service.update(id, body);
+    res.json(product);
+  } catch (error) {
+    next(error);
+  }
 })
 
 router.delete('/:id', async (req, res) => {
