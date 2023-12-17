@@ -9,7 +9,7 @@ function errorHandler (err, req, res, next) {
   res.status(503).json({
     message: err.message,
     stack: err.stack
-  })
+  });
 }
 
 // Cannot set headers after they are sent to the client
