@@ -57,22 +57,28 @@ router.put('/:id',
   }
 );
 
-router.patch('/:id', async (req, res, next) => {
+router.patch('/:id',
+validatorHandler(getProductSchema, 'params'),
+validatorHandler(updateProductSchema, 'body'),
+async (req, res) => {
   try {
     const { id } = req.params;
     const body = req.body;
     const product = await service.update(id, body);
     res.json(product);
   } catch (error) {
-    next(error);
+    res.status(404).json({
+      message: error.message
+    })
   }
-})
+}
+);
 
 router.delete('/:id', async (req, res) => {
   const { id } = req.params;
   const rta = await service.delete(id);
   res.json(rta);
-})
+});
 
 
 // app.get('/products/filter', (req, res) => {

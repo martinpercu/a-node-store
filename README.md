@@ -119,6 +119,16 @@ npm i joi
 - In the router.put('/:id', and router.patch('/:id', ... we need to mix a little bit both. IMPORTANT the middlewares are secuencial so  first validate the ID with getProductSchema then validate the products itself with updateProductSchema.
 - IMPORTANT Joi will check field by field and when find an error stop the process. So if you are updating a product with more than 1 field a name + price. If we have in both fields error will return just the first one. That's is not great for UX so.... in the validatorHandler we will add { abortEarly: false } in the schema.validate().
 
+## CORS fix
+- Install cors
+```sh
+npm i cors
+```
+- In index.js import the cors. ===> require('cors');
+- In index.js just USE it. ===> app.use(cors());
+- With this will allow ANY domain. Origin.
+- So we create a whitelist to allow from where get requests.
+- In index.js const whitelist = [] + const option = {} with a callback.
 
 
 
