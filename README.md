@@ -130,6 +130,17 @@ npm i cors
 - So we create a whitelist to allow from where get requests.
 - In index.js const whitelist = [] + const option = {} with a callback.
 
+## Refact & add enpoints & logic
+- In order router add all the endpoint without the faker
+- In product router refact all endpoints with (req, res, next) structure.
+- Create order.router. Just structure.
+- In category router add all the endpoints 
+- In index add the order router.
+- In folder schemas create files for category, order and user.
+- Create with Joi the schemas for category, user and product (nothing with order)
+- In folder services create files for category, order and user.
+- In the index refact and clean.
+
 
 
 
