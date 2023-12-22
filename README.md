@@ -141,6 +141,22 @@ npm i cors
 - In folder services create files for category, order and user.
 - In the index refact and clean.
 
+## Docker Postgress
+- Create new file docker-compose.yml with all info postgres DB
+- Start Docker
+```sh
+docker-compose up -d postgres
+```
+- check what is happening ===>
+```sh
+docker-compose ps
+```
+- Close it
+```sh
+docker-compose down postgres
+```
+
+
 
 
 
