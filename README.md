@@ -156,6 +156,61 @@ docker-compose ps
 docker-compose down postgres
 ```
 
+## Explore Postgres interfaces and terminal
+- Open a bash inside the postgres 
+```sh
+docker-compose exec postgres bash
+```
+- Once in bash is more or less the same as always.
+- Show files and folder by list
+```sh
+ls -l
+```
+- Important ===> "psql" ===> To get in this db something like this.
+```sh
+psql -h localhost -d my_store -U martin
+```
+- To know the db Structure ....
+```sh
+\d+
+```
+- Quit DB
+```sh
+\q
+```
+- Quit container
+```sh
+exit
+```
+- The Interface "pgAdmin"
+- In docker-compose add a new service... ===> pgAdmin
+- Then 
+```sh
+docker-compose up -d pgadmin
+```
+- If we make
+```sh
+docker-compose ps
+```
+We will see there are 2 services working. 
+- Now in localhost 5050 we get the pgAdmin. 
+- Now to add the Database info ===>
+```sh
+docker ps
+```
+- we get the container ID. ... then ===>
+```sh
+docker inspect "id-from-the-container"
+```
+- we will get in: "Networks"/"IPAddress" the IP adress. With this info configure the pgAdmin
+- IMPORTANT is recommended to use the NAME and not IP adress in the pgConfig. Because this ipAdress will change if container restart in the future.
+- To close all we have ...===>
+```sh
+docker-compose down pgadmin
+docker-compose down postgres
+```
+
+
 
 
 
