@@ -229,6 +229,19 @@ npm install pg
 - In products.service add this "pool" in the constructor and add a listener with a console.error.
 - In products.service in the find() method use this "pool" in the query. As an asyncronious request add the const to the query and the async in find()
 
+## Manage Environment Variables
+- Create folder config + a config.js file inside.
+- In config.js create the config {} and let it exportable module.export = {config}
+- In postgress.pool.js import this config.
+- In postgress.pool.js encode the USER + PASSWORD. Then create a const URI with. Then use this URI as connection string in the new Pool.
+- Create a new files: .env (will be local) + .env.example (example like a template to know what we need to connect).
+- Install dotenv (this is to read the .env in the config.js)
+```sh
+npm install dotenv
+```
+- In config.js "require('dotenv').config();"  ===> With this line is all we need to read the .env 
+
+
 
 
 
