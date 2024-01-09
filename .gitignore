@@ -9,6 +9,7 @@ insomnia.json
 # postgres DB
 postgres_data
 postgres_data2
+mysql_data
 
 config
 
