@@ -32,6 +32,8 @@ The project explores various approaches to database connectivity and ORM:
     * **CRUD Operations:** Replaces raw SQL queries with Sequelize ORM methods.
 * **Migrations:** Sets up `sequelize-cli` for managing database schema changes via migrations.
 
+-----------
+-----------
 
 
 ## Configuration
